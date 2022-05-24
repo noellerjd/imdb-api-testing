@@ -1,0 +1,26 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+    --dark: #624482;
+    --mid: #A594B5;
+    --light: #D5D6E8;
+  }
+
+body{
+    background-color: var(--mid);
+}
+.header{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    box-shadow: black 0 0 4px 2px;
+}
+.header h1{
+    font-family: 'Ubuntu', sans-serif;
+}
