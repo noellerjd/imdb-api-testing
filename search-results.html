@@ -4,36 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMDb api testing</title>
+    <title>IMDb api testing results</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="nav">
         <div class="header">
-            <h1>API Test</h1>
+            <h1>API Test results</h1>
         </div>
     </section>
     <section>
         <div class="formsection">
             <form id="search-form">
                 <label for="search">Search Movie: </label>
-                <input type="text" id="search" class="form-control" autocomplete="off">
+                <input type="text" id="search" class="form-control">
                 <button class="sutbmit-btn" id="submit">Submit</button>
             </form>
         </div>
     </section>
-    <!-- <section>
-        <div>
+    <section>
+        <div class="searchResults" id="searchResults">
             Search Results: 
-            <ul id="list">
-
-            </ul>
+            <div class="resultItem">
+                <div class="resultTitle">
+                    
+                </div>
+            </div>
         </div>
-    </section> -->
+    </section>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="searchResults.js"></script>
 </body>
 </html>
