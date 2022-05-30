@@ -14,27 +14,26 @@ var requestOptions = {
 var submitSearch = (event) => {
     event.preventDefault()
     
-    if(searchEl.value == ''){
+    if(searchEl.value == ''){ //will become a modal
         alert("Please enter a movie name first!");
     } else{
         fetch(`https://imdb-api.com/API/SearchMovie/k_fp9014yi/${searchEl.value}`, 
         requestOptions)
         .then(response => {console.log(response); return response.json()})
-        .then(result => console.log(result));
-        renderResults()
-    }
+        .then((result) => {
+            this.renderResults(result);
+        })
+    } 
     
 }
 
 submitButton.addEventListener('click', submitSearch);
 
-let renderResults = async function(result){
-    // const queryJson = result
-    // const queryObj = JSON.parse(queryJson)
-    console.log(result[0].title)
-    // var listItem = document.createElement('li')
-    // listItem.textContent = result."title"
-    // listEl.appendChild(listItem)
+function renderResults(result) {
+    console.log(result);
+    console.log(result.results[0].title);
+    
+    var listItem = document.createElement('li')
+    listItem.textContent = result.results[0].title
+    listEl.appendChild(listItem)
 }
-
-// .then(result => console.log(result["title"]))
