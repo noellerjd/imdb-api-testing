@@ -28,4 +28,26 @@ body{
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  align-content: center;
+}
+.movielist{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.poster{
+  margin: auto;
+  display:flex;
+  height:667px;
+  width:450px;
+}
+.movietitle{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.description{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
 }
