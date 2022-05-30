@@ -20,17 +20,18 @@ var submitSearch = (event) => {
         fetch(`https://imdb-api.com/API/SearchMovie/k_fp9014yi/${searchEl.value}`, 
         requestOptions)
         .then(response => {console.log(response); return response.json()})
-        .then(result => console.log(result))
+        .then(result => console.log(result));
         renderResults()
     }
+    
 }
 
 submitButton.addEventListener('click', submitSearch);
 
-var renderResults = function(results){
+let renderResults = async function(result){
     // const queryJson = result
     // const queryObj = JSON.parse(queryJson)
-    console.log(results)
+    console.log(result[0].title)
     // var listItem = document.createElement('li')
     // listItem.textContent = result."title"
     // listEl.appendChild(listItem)
