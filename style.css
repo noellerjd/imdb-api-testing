@@ -1,45 +1,78 @@
 /* reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   }
-
+/* basics */
 :root {
-    --dark: #624482;
-    --mid: #A594B5;
-    --light: #D5D6E8;
-  }
-
+  --dark: #003049;
+  --mid: #d62828;
+  --light: #fca242;
+}
 body{
-    background-color: var(--mid);
+  background-color: var(--mid);
+  font-family: 'Dosis', sans-serif;
 }
 .header{
-    background-color: var(--dark);
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-    box-shadow: black 0 0 4px 2px;
+  background-color: var(--dark);
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  box-shadow: black 0 0 4px 2px;
+  color: var(--light);
 }
 .header h1{
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .formsection{
   margin-top: 30px;
   display: flex;
   justify-content: center;
   align-content: center;
+  color: white;
 }
-.movielist{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.submit-btn{
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+.submit-btn:hover{
+  background-color: dimgray;
+  color: white;
+}
+.form-control{
+  border-top: solid transparent;
+  border-left: solid transparent;
+  border-right: solid transparent;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: text;
+  color: white;
+}
+#search-form{
+  background-color: var(--dark);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: black 0 0 5px 1px;
+  transition: all 0.3s ease;
+}
+#search-form:hover{
+  box-shadow: none;
+}
+/* Query results - styling */
 .poster{
   margin: auto;
   display:flex;
   height:667px;
   width:450px;
+  border-radius: 15px;
+  transition: all ease 0.3s ;
+}
+.poster:first-child{
+  margin-top: 10px;
 }
 .movietitle{
   margin: auto;
@@ -50,4 +83,26 @@ body{
   display: flex;
   justify-content: center;
   justify-self: center;
+  padding-bottom: 5px;
+}
+.movieContainer{
+  background-color: var(--light);
+  padding: 30px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.newMovieItem{
+  background-color: var(--mid);
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  margin: 8px;
+  transition: all ease 0.3s ;
+}
+.newMovieItem:hover{
+  box-shadow: black 0 0 10px 1px;
 }

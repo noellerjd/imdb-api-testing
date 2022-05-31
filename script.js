@@ -30,28 +30,44 @@ var submitSearch = (event) => {
 submitButton.addEventListener('click', submitSearch);
 
 function renderResults(result) {
-    var listItem = document.createElement('h1');
-    var posterItem = document.createElement('img');
-    var descItem = document.createElement('p');
-    posterItem.className = "poster";
+    var newContainer = document.createElement('div'); //creates a container for query
+    var listItem = document.createElement('h1'); //creates an h1 for the title
+    var posterItem = document.createElement('img'); //creates an img for the poster
+    var descItem = document.createElement('p'); // creates a p for the description
+    var linkItem = document.createElement('a');// creates a link when clicked on poster
+    //sets the class of the elements
+    linkItem.id = result.results[0].id; //sets the id of the link to the movie id
+    newContainer.className = "newMovieItem";
+    posterItem.className = "poster"; 
     listItem.className = "movietitle";
     descItem.className = "description";
-
-
-    
-    // poster
-    posterItem.src = result.results[0].image
-    listEl.appendChild(posterItem)
-
-    // title
+    // adds the query container to the #list parent
+    listEl.appendChild(newContainer)
+    // sets poster source to the first of the response array, then adds it to the new container
+    newContainer.appendChild(linkItem)
+    // sets the title to the text of the first response array, then adds it to the new container
     listItem.textContent = result.results[0].title
-    listEl.appendChild(listItem)
-
-    // Description
+    newContainer.appendChild(listItem)
+    // sets the description to the text of the first array, then adds it to the new container
     descItem.textContent = result.results[0].description
-    listEl.appendChild(descItem)
+    newContainer.appendChild(descItem)
+    // makes the link a child of the img
+    posterItem.src = result.results[0].image
+    linkItem.appendChild(posterItem)
+    
+    // fetches the YoutubeTrailer URL for the searched movie.
+    fetch(`https://imdb-api.com/API/YoutubeTrailer/k_fp9014yi/${result.results[0].id}`,requestOptions)
+    .then(response => {console.log(response); return response.json()})
+    .then((result) => {
+        this.trailerAddition(result);
+    })
+}
 
-
-    // console.log(result.results[0].title);
-    console.log(result);
+function trailerAddition(result){
+    // appends the poster to link to the searched movies YoutubeTrailer Url on another tab
+    var posterId = document.querySelector('#'+`${result.imDbId}`)
+    posterId.href = result.videoUrl
+    posterId.target = "_blank"
+    // console.log(result.videoUrl)
+    // console.log(result.imDbId)
 }
