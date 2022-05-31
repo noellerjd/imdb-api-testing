@@ -106,3 +106,21 @@ body{
 .newMovieItem:hover{
   box-shadow: black 0 0 10px 1px;
 }
+@media screen and (max-width: 599px) {
+  .newMovieItem{
+    width:350px;
+  }
+  .poster{
+    height:567px;
+    width:350px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .newMovieItem{
+    width:250px;
+  }
+  .poster{
+    height:367px;
+    width:250px;
+  }
+}
